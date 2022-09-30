@@ -4,10 +4,14 @@ import levvel.io.model.Comment;
 
 import java.util.List;
 
-public class CommentService {
+public interface CommentService {
     
-    //add comment method
+    //add comment class definition
+    void addComment(String blogId, Comment comment);
 
-    //get comment method
-    
+
+    //get comments class definition
+    List<Comment> getComments(String blogId);
+
+
 }

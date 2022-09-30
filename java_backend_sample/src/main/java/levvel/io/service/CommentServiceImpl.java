@@ -13,8 +13,19 @@ import java.util.List;
 public class CommentServiceImpl implements CommentService {
     
     //create a comment repository
+    private CommentRepository comRepo;
+
 
     //add comments method
-    
+    @Override
+    public void addComment(String blogId, Comment comment){
+        comRepo.save(comment);
+    }
+
+
     //get comments method
+    @Override
+    public List<Comment> getComments(String blogId) {
+        return comRepo.getComFromBlogId(blogId);
+    }
 }
